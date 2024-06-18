@@ -1,0 +1,9 @@
+root = true #Devem ser aplicadas ao diretorio corrente e subdiretorio
+
+[*] #Para todos os arquivos aplicar as seguintes configurações
+charset = utf-8 
+indent_size = 2 
+indent_style = space 
+end_of_line = lf 
+insert_final_newline = true 
+trim_trailing_whitespace = true #espaços removidos automaticamente
