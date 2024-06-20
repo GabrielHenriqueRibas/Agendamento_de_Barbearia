@@ -25,5 +25,3 @@ networks:
   app-network:
     driver: bridge
 
-volumes:
-  dbdata:
