@@ -19,6 +19,7 @@ services:
       - .:/var/www
     networks:
       - app-network
+<<<<<<< HEAD
     depends_on:
       - db
 
@@ -35,10 +36,16 @@ services:
       - dbdata:/var/lib/mysql
     networks:
       - app-network
+=======
+
+>>>>>>> a49ae8b61cc583cb98714d571cec44d684fe81bc
 
 networks:
   app-network:
     driver: bridge
 
+<<<<<<< HEAD
 volumes:
   dbdata:
+=======
+>>>>>>> a49ae8b61cc583cb98714d571cec44d684fe81bc
