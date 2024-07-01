@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore HTML folder
+html
+
+# Ignore logs and temporay files
+*.log
+*.temp
+
+# Ignore vendor folder
+/vendor/
+
+# Ignore cache folder
+.cache/*
+
+# Ignore .env
+.env
+
+# Ignore files and folders inside uploads but keep it
+/public/assets/uploads/*
+!/public/assets/uploads/.gitkeep
+=======
 #Ignore Visual Studio Code settings
 .vscode/
 
@@ -7,3 +31,4 @@
 #Ignore logs and temporay files
 *.log
 *.temp
+>>>>>>> a49ae8b61cc583cb98714d571cec44d684fe81bc

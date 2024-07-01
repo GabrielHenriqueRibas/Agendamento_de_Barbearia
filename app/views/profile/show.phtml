@@ -1,0 +1,77 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<title>User</title>
+  <body>
+    <div class="flex">
+      <div id="image-user" class="m-10">
+        <img id="image_preview" class="avatar rounded img-thumbnail" src="<?= $this->current_user->avatar()->path() ?>" alt="avatar">
+        <form action="<?= route('profile.avatar') ?>" method="POST" enctype="multipart/form-data">
+            <input id="image_preview_input" type="file" name="user_avatar" id="user_avatar">
+            <div class="d-grid mt-2">
+                <button id="image_preview_submit" type="submit" class="btn btn-fill btn-primary">Atualizar</button>
+            </div>
+        </form>
+      </div>
+      <div id="input" class="flex flex-col aling-center justify-center ml-14">
+        <div>
+          <input
+            type="text"
+            class="bg-white border-gray-500 border-2 rounded-lg my-5 w-80 h-8 p-2"
+            placeholder="<?= $this->current_user->name ?>"
+            required
+          />
+          <input
+            type="text"
+            class="bg-white border-gray-500 border-2 rounded-lg my-5 mx-5 w-80 h-8 p-2"
+            placeholder="<?= $this->current_user->email ?>"
+            required
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            class="bg-white border-gray-500 border-2 rounded-lg my-5 w-80 h-8 p-2"
+            placeholder="() 00000-0000*"
+            required
+          />
+          <input
+            type="text"
+            class="bg-white border-gray-500 border-2 rounded-lg my-5 mx-5 w-80 h-8 p-2"
+            placeholder="Senha"
+          />
+        </div>
+        <div id="button" class="flex justify-center mt-12">
+          <a href="<?= route('users.logout') ?>" id="Excluir" class="bg-red-700 text-white rounded-full py-2 px-5 font-bold mr-5">SAIR</a>
+          <button id="Atualizar" class="bg-blue-700 text-white rounded-full py-2 px-5 font-bold ml-5">ATUALIZAR DADOS</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+<!--
+<div class="d-flex">
+    <div>
+        <img id="image_preview" class="avatar rounded img-thumbnail" src="<?= $this->current_user->avatar()->path() ?>" alt="avatar">
+
+        <form action="<?= route('profile.avatar') ?>" method="POST" enctype="multipart/form-data">
+            <input id="image_preview_input" type="file" name="user_avatar" id="user_avatar">
+            <div class="d-grid mt-2">
+                <button id="image_preview_submit" type="submit" class="btn btn-fill btn-primary">Atualizar</button>
+            </div>
+        </form>
+
+    </div>
+    <div class="mx-5">
+        <div class="rounded">
+            <h3><?= $this->current_user->name ?></h3>
+            <span class="text-primary">Estudante de Sistema para Internet</span>
+        </div>
+        <ul class="list-unstyled mt-2">
+            <li>
+                <span>Email: <?= $this->current_user->email ?></span>
+            </li>
+        </ul>
+    </div>
+</div>
+-->
