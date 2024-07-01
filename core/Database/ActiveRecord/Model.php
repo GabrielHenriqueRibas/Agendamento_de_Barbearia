@@ -154,7 +154,7 @@ abstract class Model
                     $stmt->bindValue($column, $this->$column);
                 }
 
-                $stmt->execute();
+                $stmt->execute();   
 
                 $this->id = (int) $pdo->lastInsertId();
             } else {
@@ -177,9 +177,11 @@ abstract class Model
                 }
 
                 $stmt->execute();
+                
             }
             return true;
-        }
+        } 
+
         return false;
     }
 

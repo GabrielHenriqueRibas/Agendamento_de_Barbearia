@@ -26,4 +26,13 @@ CREATE TABLE problem_user_reinforce (
     problem_id INT NOT NULL REFERENCES users(id) ON DELETE RESTRICT
 );
 
+DROP TABLE IF EXISTS admins;
+
+CREATE TABLE admins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(250) NOT NULL,
+    email VARCHAR(60) NOT NULL,
+    encrypted_password VARCHAR(250) NOT NULL
+);
+
 SET foreign_key_checks = 1;

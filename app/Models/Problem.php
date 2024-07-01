@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use Core\Database\ActiveRecord\BelongsTo;
-use Core\Database\ActiveRecord\BelongsToMany;
 use Lib\Validations;
 use Core\Database\ActiveRecord\Model;
 
@@ -14,6 +12,7 @@ use Core\Database\ActiveRecord\Model;
  * @property User $user
  * @property User[] $reinforced_by_users
  */
+
 class Problem extends Model
 {
     protected static string $table = 'problems';
