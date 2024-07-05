@@ -24,9 +24,9 @@ class User extends Model
     protected ?string $password = null;
     protected ?string $password_confirmation = null;
 
-    public function problems(): HasMany
+    public function schedules(): HasMany
     {
-        return $this->hasMany(Problem::class, 'user_id');
+        return $this->hasMany(Scheduling::class, 'user_id');
     }
 
     public function reinforcedProblems(): BelongsToMany
@@ -76,5 +76,10 @@ class User extends Model
     public function avatar(): ProfileAvatar
     {
         return new ProfileAvatar($this);
+    }
+
+    public function problems(): HasMany
+    {
+        return $this->hasMany(Problem::class, 'user_id');
     }
 }

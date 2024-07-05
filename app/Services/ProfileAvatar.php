@@ -45,11 +45,12 @@ class ProfileAvatar
 
     private function removeOldImage(): void
     {
-        if ($this->model->avatar_name) {
-            $path = Constants::rootPath()->join('public' . $this->baseDir())->join($this->model->avatar_name);
+        if ($this->model->avatar_name && file_exists(Constants::rootPath()->join('public'. $this->baseDir())->join($this->model->avatar_name))) {
+            $path = Constants::rootPath()->join('public'. $this->baseDir())->join($this->model->avatar_name);
             unlink($path);
         }
     }
+
 
     private function getFileName(): string
     {

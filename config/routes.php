@@ -1,9 +1,12 @@
 <?php
 
+use App\Controllers\AdminController;
 use App\Controllers\AuthenticationsController;
 use App\Controllers\ProblemsController;
 use App\Controllers\ProfileController;
 use App\Controllers\ReinforceProblemsController;
+use App\Controllers\SchedulingController;
+use App\Controllers\BarberController;
 use Core\Router\Route;
 
 // Authentication
@@ -12,6 +15,22 @@ Route::post('/login', [AuthenticationsController::class, 'authenticate'])->name(
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [ProblemsController::class, 'index'])->name('root');
+
+    Route::get('/user', [ProblemsController::class, 'index'])->name('root');
+
+    // Admin
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::delete('/admin/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
+
+    // Barber
+    Route::get('/barber/new', [BarberController::class, 'new'])->name('barber.new');
+    Route::post('/barber', [BarberController::class, 'create'])->name('barber.create');
+    Route::get('/barber/edit', [BarberController::class, 'edit'])->name('barber.edit');
+    Route::put('/barber/{id}', [BarberController::class, 'update'])->name('barber.update');
+    Route::get('/barber/show', [BarberController::class, 'show'])->name('barber.show');
+
+    // Scheduling
+    Route::post('/scheduling', [SchedulingController::class, 'create'])->name('scheduling.create');
 
     // Create
     Route::get('/problems/new', [ProblemsController::class, 'new'])->name('problems.new');
@@ -35,6 +54,9 @@ Route::middleware('auth')->group(function () {
     // Profile
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::post('/profile/avatar', [ProfileController::class, 'updateAvatar'])->name('profile.avatar');
+    Route::get('/profile/new', [ProfileController::class, 'new'])->name('profile.new');
+    Route::post('/profile/create', [ProfileController::class, 'create'])->name('profile.create');
+    Route::put('/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
 
 
     // Reinforce Problems

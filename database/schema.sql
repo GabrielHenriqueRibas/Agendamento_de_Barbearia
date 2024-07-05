@@ -26,4 +26,32 @@ CREATE TABLE problem_user_reinforce (
     problem_id INT NOT NULL REFERENCES users(id) ON DELETE RESTRICT
 );
 
+DROP TABLE IF EXISTS admins;
+
+CREATE TABLE admins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(250) NOT NULL,
+    email VARCHAR(60) NOT NULL,
+    encrypted_password VARCHAR(250) NOT NULL
+);
+
+DROP TABLE IF EXISTS schedules;
+
+CREATE TABLE schedules (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    barber VARCHAR(250) NOT NULL,
+    service VARCHAR(60) NOT NULL,
+    date_scheduling VARCHAR(250) NOT NULL,
+    local VARCHAR(250) NOT NULL,
+    user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS barbers;
+
+CREATE TABLE barbers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(250) NOT NULL,
+    email VARCHAR(60) NOT NULL
+);
+
 SET foreign_key_checks = 1;

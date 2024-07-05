@@ -12,7 +12,32 @@ use Core\Database\ActiveRecord\Model;
  * @property User $user
  * @property User[] $reinforced_by_users
  */
+class Barber extends Model
+{
+    protected static string $table = 'barbers';
+    protected static array $columns = ['name', 'email'];
 
+    protected ?string $password = null;
+    protected ?string $password_confirmation = null;
+
+
+    public function validates(): void
+    {
+        Validations::notEmpty('name', $this);
+        Validations::notEmpty('email', $this);
+    }
+
+}
+
+/*
+/**
+ * @property int $id
+ * @property string $title
+ * @property int $user_id
+ * @property User $user
+ * @property User[] $reinforced_by_users
+ */
+/*
 class Problem extends Model
 {
     protected static string $table = 'problems';
@@ -38,3 +63,4 @@ class Problem extends Model
         return ProblemUserReinforce::exists(['problem_id' => $this->id, 'user_id' => $user->id]);
     }
 }
+*/

@@ -1,3 +1,19 @@
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Area do Usuario</title>
+<body>
+    <header class="flex items-center bg-black">
+        <a href="<?= route('root')?>"><img src="/assets/images/logo.png" alt="logo" class="w-16 m-3" /></a>
+  
+        <a href="<?= route('profile.show') ?>" class="text-white hover:underline"><?= $title1?></a>
+        <a href="<?= route('profile.new') ?>" class="text-white ml-10 hover:underline"><?= $title2?></a>
+    </header>
+    <div>
+        <img src="/assets/images/background-user.png" alt="barbearia" class="w-screen h-screen object-cover">        
+    </div>
+</body>
+
+
+<!--
 <div class="row">
     <div class="col-8 mb-3">
         <div class="input-group">
@@ -41,5 +57,5 @@
         <?php endforeach; ?>
     </tbody>
 </table>
-
 <?php $paginator->renderPagesNavigation(); ?>
+-->

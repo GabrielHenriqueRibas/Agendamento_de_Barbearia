@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header class="flex items-center bg-black">
+        <a href=""><img src="/assets/images/logo.png" alt="logo" class="w-16 m-3" /></a>
+        <h1 href="" class="text-white hover:underline">Funcionarios</h1>
+    </header>
+    <div class="flex items-center justify-center mt-12">
+        <div id="input" class="">
+            <form action="<?= route('barber.create') ?>" method="POST">
+                <input
+                    type="text"
+                    class="bg-white border-gray-500 border-2 rounded-lg my-5 w-80 h-8 p-2"
+                    placeholder="Nome do Funcionario*"
+                    name="admin[name]"
+                    required
+                />
+                <input
+                    type="text"
+                    class="bg-white border-gray-500 border-2 rounded-lg my-5 mx-5 w-80 h-8 p-2"
+                    placeholder="email@gmail.com"
+                    name="admin[email]"
+                    required
+                />
+                <div class="flex items-center justify-center">
+                    <a href="<?= route('admin.new') ?>" id="Excluir" class="bg-red-700 text-white rounded-full py-2 px-5 font-bold mr-5">CANCELAR</a>
+                    <button href="<?= route('admin.new') ?>" id="Atualizar" class="bg-blue-700 text-white rounded-full py-2 px-5 font-bold ml-5">CADASTRAR</button>  
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

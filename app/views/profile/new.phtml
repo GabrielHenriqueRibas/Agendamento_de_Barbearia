@@ -1,0 +1,56 @@
+<header class="flex items-center bg-black">
+        <a href="<?= route('root')?>"><img src="/assets/images/logo.png" alt="logo" class="w-16 m-3" /></a>
+  
+        <h1 class="text-white hover:underline">Agendamento</h1>
+</header>
+
+<div class="flex justify-center mt-10 ">
+    <h1>Nome: <?= $this->current_user->name ?></h1>
+    <h1 class="mx-8">Email: <?= $this->current_user->email ?></h1>
+    <h1>Telefone: (00) 00000-0000</h1>
+</div>
+
+<form id="schedulingForm" action="<?= route('scheduling.create') ?>" method="POST" >
+    <div class="ml-8">
+        <h1 class="font-bold">Barbeiro:</h1>
+        <tbody>
+        <?php foreach ($barbers as $barber) : ?>
+            <tr>
+                <td>
+                <div class="flex">
+                    <input type="radio" value="<?= $barber->name ?>" name="scheduling[barber]">
+                    <label for="scheduling_title"><?= $barber->name ?></label>
+                </div>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+
+
+        <h1 class="font-bold mt-8">Serviços:</h1>
+        <div class="flex">
+            <input type="checkbox" value="Cabelo" name="scheduling[service]">
+            <label for="Cabelo">Cabelo</label>
+
+            <input type="checkbox" value="Barba" class="ml-8" name="scheduling[service]">
+            <label for="Barba" class="mr-8">Barba</label>
+
+            <input type="checkbox" value="Sombrancelha" name="scheduling[service]">
+            <label for="Sombrancelha">Sombrancelha</label>
+        </div>
+
+        <h1 class="font-bold mt-8">Data:</h1>
+        <div class="flex">
+            <input type="date" name="scheduling[date_scheduling]" id="data">
+        </div>
+
+        <h1 class="font-bold mt-8">Local:</h1>
+        <select name="scheduling[local]" id="local">
+            <option value="">Selecione um Local</option>
+            <option value="end1">Rua Exemplo, 2015- bairro- 0000000</option>
+            <option value="end2">Rua Exemplo, 2015- bairro- 0000000</option>
+            <option value="end3">Rua Exemplo, 2015- bairro- 0000000</option>
+        </select>
+    </div>
+    <button type='submit' class="flex justify-center mt-10 bg-blue-700">Agendar</button>
+</form>
